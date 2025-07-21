@@ -1,0 +1,94 @@
+body {
+    background-color: black;
+    background-image: url('images/beboranNEO.gif');
+    background-size: 100% 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Убирает скролл при зуме */
+}
+
+body {
+    touch-action: none; /* Блокировка жестов на мобильных */
+    user-zoom: fixed; /* Для Chrome, если meta не сработал */
+}
+
+.photo img {
+    width: 315px !important; /* Жестко фиксируем ширину */
+    height: auto; /* Пропорции сохраняются */
+    max-width: none !important; /* Отключаем адаптивность */
+}
+
+.module-border-wrap {
+    padding: 1px;
+    background: linear-gradient(to right, red, purple);
+    border-radius: 25px;
+    box-shadow:
+        -10px -0px 20px purple,
+        10px -0px 20px red;  
+        animation: shake 0.5s infinite
+}
+
+.center {
+    position: fixed; /* Фиксируем позицию */
+    top: +30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+}
+
+.photo2 img {
+    width: 935px !important; /* Жестко фиксируем ширину */
+    top: -20%;
+    height: auto; /* Пропорции сохраняются */
+    max-width: none !important; /* Отключаем адаптивность */
+    animation: shake 0.5s infinite
+}
+.center2 {
+    position: fixed; /* Фиксируем позицию */
+    top: +72%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    
+}
+.center3 {
+    position: fixed; /* Фиксируем позицию */
+    top: +75%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+}
+.module-border-wrap2 {
+    box-shadow:
+        0 0 50px rgba(0, 102, 255, 0.7),  /* Основное свечение */
+        0 0 50px rgba(0, 80, 255, 0.4);   /* Дополнительное размытие */
+    width: 150px;  /* Диаметр круга */
+    height: 150px; /* = width для идеального круга */
+    border-radius: 50%; /* Делаем круг */
+    background: transparent; /* Прозрачный фон */
+    position: relative; /* Для позиционирования */
+}
+
+    
+.photo3 img {
+    width: 150px !important; /* Жестко фиксируем ширину */
+    top: -15%;
+    height: auto; /* Пропорции сохраняются */
+    max-width: none !important; /* Отключаем адаптивность */
+}
+#dvd {
+            position: absolute;
+            width: 120px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+@keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
