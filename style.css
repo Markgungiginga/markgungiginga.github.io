@@ -28,7 +28,7 @@ body {
     box-shadow:
         -10px -0px 20px purple,
         10px -0px 20px red;  
-        animation: shake 0.5s infinite
+        animation: shake 4.76s infinite
 }
 
 .center {
@@ -92,3 +92,19 @@ body {
         10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
         20%, 40%, 60%, 80% { transform: translateX(5px); }
     }
+
+#myAudio {
+    position: fixed !important; /* Фиксированное положение */
+    top: 90%;    /* Отступ снизу */
+    left: 42%;     /* Отступ справа */
+    width: 300px;
+}
+
+.text-center1 {
+    position: fixed; /* Фиксируем позицию */
+    top: +93%;
+    left: 64.5%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    color: hwb(114 3% 4%);
+    outline: black;
+}
