@@ -122,3 +122,71 @@ body {
     color: hwb(114 3% 4%);
     outline: black;
 }
+ .glow {
+           position: absolute;
+           width: 300px;
+           height: 300px;
+           border-radius: 50%;
+           filter: blur(50px);
+           opacity: 0;
+           animation: pulse 1s infinite; /* 126 BPM */
+       }
+       
+       #glow-tl {
+           top: -150px;
+           left: -150px;
+           background: radial-gradient(circle, rgba(255,0,100,0.8), transparent 90%);
+       }
+       @keyframes pulse {
+           0%, 100% { opacity: 5; transform: scale(0.8); }
+           50% { opacity: 0.3; transform: scale(1); }
+       }
+        #glow-tr2 {
+            top: -150px;
+            right: -150px;
+            background: radial-gradient(circle, rgba(217, 0, 255, 0.7), transparent 60%);
+        }
+        .top-pulse {
+            position: fixed; /* Изменил на fixed для надежности */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px; /* Увеличил высоту */
+            background: linear-gradient(to bottom, 
+                          rgba(255, 0, 100, 0.9), /* Яркий розовый */
+                          rgba(255, 0, 100, 0) 90%);
+            filter: blur(60px);
+            opacity: 0.8;
+            animation: top-pulse 0.476s infinite; /* 126 BPM */
+            z-index: 9998; /* Высокий индекс */
+            pointer-events: none; /* Чтобы не перекрывал клики */
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(0.8); }
+            50% { opacity: 0.3; transform: scale(1); }
+        }
+        
+        @keyframes top-pulse {
+            0%, 100% { 
+                opacity: 0.6; /* Увеличил видимость */
+                transform: scaleY(0.9) translateY(-20px); 
+            }
+            50% { 
+                opacity: 0.9; /* Максимальная видимость */
+                transform: scaleY(1.3) translateY(0); /* Усилил амплитуду */
+            }
+        }
+.centercow {
+    position: fixed; /* Фиксируем позицию */
+    top: +93%;
+    left: 3%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    
+}
+.photocow img {
+    width: 500px !important; /* Жестко фиксируем ширину */
+    top: -10%;
+    height: auto; /* Пропорции сохраняются */
+    max-width: none !important; /* Отключаем адаптивность */
+}
