@@ -51,15 +51,16 @@ window.addEventListener('resize', () => {
 // Запуск анимации
 updatePosition();
 
-
+    function AUTOPLAY () {        
+    const audio = document.getElementById("myAudio");
+        if (audio.paused) {
+            audio.volume = 0.15;
+            audio.play().catch(e => console.error("Автовоспроизведение заблокировано"));
+        }}
     // Автоматический клик при загрузке (работает в большинстве случаев)
     document.addEventListener('DOMContentLoaded', () => {
-        const clickEvent = new MouseEvent('click', {
-            bubbles: true,
-            cancelable: true,
-            view: window
-        });
-        document.dispatchEvent(clickEvent);
+        AUTOPLAY()
+
     });
 
     // Воспроизводим аудио после "клика"
