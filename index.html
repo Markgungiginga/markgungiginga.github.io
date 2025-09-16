@@ -1,21 +1,24 @@
+<!DOCTYPE html>
 <html lang="ru">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sperma</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+            crossorigin="anonymous">
 
-    </head>
-    <body>
+</head>
+<body>
+    <div class="FirstOne">      
         <div class="center">
             <div class="module-border-wrap"> 
                 <div class="photo">
                     <img src="images/neZlob.png">
                 </div>        
             </div>    
-        </div>
-        <div>
-
         </div>
         <div class="center2">
             <div>
@@ -32,22 +35,22 @@
             </div> 
         </div> 
         <div class="center3">
-                    <div class= "module-border-wrap2">
-                <a class="photo3" href="https://t.me/+0ddkzhlId-wwMjUy">
-                    <img src="images/telegramma.gif">
-                </a>  
-            </div> 
+                <div class= "module-border-wrap2">
+                    <a class="photo3" href="https://t.me/+0ddkzhlId-wwMjUy">
+                        <img src="images/telegramma.gif">
+                    </a>  
+                </div> 
         </div>
         <a id="dvd" href="https://www.twitch.tv/yevreyskiymops">
             <img src="images/twitch-wink.gif">
         </a>
-        <div>
+
         <canvas id="strobe"></canvas>
         <div class="glow" id="glow-tl"></div>
-            <div class="glow" id="glow-tr2"></div>
-                <div class="top-pulse"></div>
+        <div class="glow" id="glow-tr2"></div>
+        <div class="top-pulse"></div>
         <audio id="myAudio" controls autoplay !important>
-             <source src="audio/techno.mp3" type="audio/mpeg" !important>
+             <source src="audio/techno.mp3" type="audio/mpeg"  !important>
         </audio>
         <div class="text-center1">
             <div>
@@ -56,8 +59,35 @@
                 </div>
             </div>
         </div>
-        <script src="dvd.js">
-        </script>
+    </div>
+<!--Тут второй экран в котором калькулятор мой, не путай не какай-->
+<div class="SecondOne bg-dark text-light">
+    <div class="container w-50 pt-5">
+        <h1 class="text-center">Калькулятор</style></h1>
+        <input
+            type="number"
+            class="form-control mb-2"
+            placeholder="Введите 1 число"
+            id="input1"
+            value="10">
+        <input
+            type="number"
+            class="form-control mb-2"
+            placeholder="Введите 2 число"
+            id="input2"
+            value="5">
+        <div class="d-flex mb-2">
+            <button class="btn btn-success flex-grow-1 mx-2" id="plus">+</button>
+            <button class="btn btn-danger flex-grow-1 mx-2" id="minus">-</button>
+            <button class="btn btn-primary flex-grow-1 mx-2" id="multiply">*</button>
+            <button class="btn btn-warning flex-grow-1 mx-2" id="divide">/</button>  
         </div>
-    </body>
+        <button class="btn btn-outline-info w-100 mx-2" id="submit">Вычислить</button>
+        <div class="text-bg-light p-3 text-center">
+            <h4>Результат:</h4>
+            <p id="result" class="mb-0">15</p>
+        </div>
+    </div>
+        <script src="dvd.js"></script>
+</body>
 </html>

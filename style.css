@@ -1,224 +1,244 @@
-body {
-background-color: black;
-background-image: url('images/beboranNEO.gif');
+.FirstOne {
+position: relative;
+height: 100vh;
+width: 100%;
+overflow: hidden; 
+background-image: url('images/beboranNEO.gif'); 
 background-size: 100% 100%;
-margin: 0;
+background-repeat: no-repeat;
+position: relative;
+height: 100vh;
+width: 100%;
+}
+    body {
+    background-color: black;
+
+
+    }
+    body {
+    touch-action: none; /* Блокировка жестов на мобильных */
+    user-zoom: fixed; /* Для Chrome, если meta не сработал */
+    }
+    .photo img {
+    width: 315px !important; /* Жестко фиксируем ширину */
+    height: auto; /* Пропорции сохраняются */
+    max-width: none !important; /* Отключаем адаптивность */
+    }
+    .module-border-wrap {
+    padding: 1px;
+    background: linear-gradient(to right, red, purple);
+    border-radius: 25px;
+    box-shadow:
+    -10px -0px 20px purple,
+    10px -0px 20px red;  
+    animation: intense-shake 4.76s infinite
+    }
+    .center {
+    position: absolute; /* Фиксируем позицию */
+    top: +30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    }
+    .photo2 img {
+    width: 735px !important; /* Жестко фиксируем ширину */
+    top: -20%;
+    height: auto; /* Пропорции сохраняются */
+    max-width: none !important; /* Отключаем адаптивность */
+    animation: shake 0.5s infinite
+    }
+    .center2 {
+    position: absolute; /* Фиксируем позицию */
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    }
+    .center3 {
+    position: absolute; /* Фиксируем позицию */
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    }
+    .module-border-wrap2 {
+    box-shadow:
+    0 0 50px rgba(0, 102, 255, 0.7),  /* Основное свечение */
+    0 0 50px rgba(0, 80, 255, 0.4);   /* Дополнительное размытие */
+    width: 150px;  /* Диаметр круга */
+    height: 150px; /* = width для идеального круга */
+    border-radius: 50%; /* Делаем круг */
+    background: transparent; /* Прозрачный фон */
+    position: relative; /* Для позиционирования */
+    }
+    .photo3 img {
+    width: 150px !important; /* Жестко фиксируем ширину */
+    top: -15%;
+    height: auto; /* Пропорции сохраняются */
+    max-width: none !important; /* Отключаем адаптивность */
+    }
+    #dvd {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    }
+    @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+    }
+    @keyframes intense-shake {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    10% { transform: translate(-12px, 12px) rotate(-16deg); }
+    20% { transform: translate(15px, 15px) rotate(14deg); }
+    30% { transform: translate(-13px, 12px) rotate(-16deg); }
+    40% { transform: translate(16px, -14px) rotate(16deg); }
+    50% { transform: translate(-13px, 14px) rotate(-14deg); }
+    60% { transform: translate(16px, -13px) rotate(45deg); }
+    70% { transform: translate(-15px, 17px) rotate(-55deg); }
+    80% { transform: translate(18px, -15px) rotate(-19deg); }
+    90% { transform: translate(-17px, 18px) rotate(15deg); }
+    }    
+    #myAudio {
+    position: absolute;
+    bottom: 4%;       /* Отступ снизу внутри first-screen */
+    left: 50.1%;         /* По центру */
+    transform: translateX(-50%); /* Центрирование */
+    width: 280px;
+    z-index: 1000;     /* Чтобы был поверх других элементов */
+    }
+    .text-center1 {
+    position: absolute; /* Фиксируем позицию */
+    top: 93%;
+    left: 64.6%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    color: hwb(114 3% 4%);
+    outline: black;
+    }
+    .glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0;
+    animation: pulse 1s infinite; /* 126 BPM */
+    }
+    #glow-tl {
+    top: -150px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(255,0,100,0.8), transparent 90%);
+    }
+    @keyframes pulse {
+    0%, 100% { opacity: 5; transform: scale(0.8); }
+    50% { opacity: 0.3; transform: scale(1); }
+    }
+    #glow-tr2 {
+    top: -150px;
+    right: -150px;
+    background: radial-gradient(circle, rgba(217, 0, 255, 0.7), transparent 60%);
+    }
+    .top-pulse {
+    position: fixed; /* Изменил на fixed для надежности */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Увеличил высоту */
+    background: linear-gradient(to bottom, 
+    rgba(255, 0, 100, 0.9), /* Яркий розовый */
+    rgba(255, 0, 100, 0) 90%);
+    filter: blur(60px);
+    opacity: 0.8;
+    animation: top-pulse 0.476s infinite; /* 126 BPM */
+    z-index: 9998; /* Высокий индекс */
+    pointer-events: none; /* Чтобы не перекрывал клики */
+    }
+    @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(0.8); }
+    50% { opacity: 0.3; transform: scale(1); }
+    }
+    @keyframes top-pulse {
+    0%, 100% { 
+    opacity: 0.6; /* Увеличил видимость */
+    transform: scaleY(0.9) translateY(-20px); 
+    }
+    50% { 
+    opacity: 0.9; /* Максимальная видимость */
+    transform: scaleY(1.3) translateY(0); /* Усилил амплитуду */
+    }
+    }
+    .centercow {
+    position: absolute; /* Фиксируем позицию */
+    top: 99%;
+    left: 1%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    }
+    .photocow img {
+    width: 500px !important; /* Жестко фиксируем ширину */
+    top: -10%;
+    height: auto; /* Пропорции сохраняются */
+    max-width: none !important; /* Отключаем адаптивность */
+    animation: cow-pulse 1s infinite;
+    }
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    overflow-x: hidden;
+    }
+    /* Пример адаптивного контейнера */
+    .container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    }
+    /* Медиа-запросы для разных экранов */
+    @media (max-width: 768px) {
+    body {
+    font-size: 14px;
+    }
+    /* Дополнительные мобильные стили */
+    }
+    @media (max-width: 480px) {
+    body {
+    font-size: 13px;
+    }
+    }
+    * { box-sizing: border-box; }
+    img { max-width: 100%; height: auto; }
+    @media (max-width: 480px) {
+    } 
+    @media (max-width: 768px) {
+    .module-border-wrap {
+    padding: 0.5px;
+    border-radius: 15px;
+    }
+    .photo img {
+    width: 100% !important;
+    }
+    }
+    @keyframes cow-pulse {
+    0%, 100% { opacity: 1; transform: scale(0.9); }
+    37% { opacity: 1; transform: scale(1.4);  }
+    }
+.SecondOne {
+min-height: 30vh;
+height: auto; /* Высота во весь экран */
+width: 100%;
 display: flex;
 justify-content: center;
-align-items: center;
-min-height: 100vh;
-overflow: hidden; /* Убирает скролл при зуме */
+align-items: flex-start;
+padding-bottom: 25px;
 }
-body {
-touch-action: none; /* Блокировка жестов на мобильных */
-user-zoom: fixed; /* Для Chrome, если meta не сработал */
-}
-.photo img {
-width: 315px !important; /* Жестко фиксируем ширину */
-height: auto; /* Пропорции сохраняются */
-max-width: none !important; /* Отключаем адаптивность */
-}
-.module-border-wrap {
-padding: 1px;
-background: linear-gradient(to right, red, purple);
-border-radius: 25px;
-box-shadow:
--10px -0px 20px purple,
-10px -0px 20px red;  
-animation: intense-shake 4.76s infinite
-}
-.center {
-position: fixed; /* Фиксируем позицию */
-top: +30%;
-left: 50%;
-transform: translate(-50%, -50%); /* Центрирование */
-}
-.photo2 img {
-width: 735px !important; /* Жестко фиксируем ширину */
-top: -20%;
-height: auto; /* Пропорции сохраняются */
-max-width: none !important; /* Отключаем адаптивность */
-animation: shake 0.5s infinite
-}
-.center2 {
-position: fixed; /* Фиксируем позицию */
-top: +72%;
-left: 50%;
-transform: translate(-50%, -50%); /* Центрирование */
-}
-.center3 {
-position: fixed; /* Фиксируем позицию */
-top: +75%;
-left: 50%;
-transform: translate(-50%, -50%); /* Центрирование */
-}
-.module-border-wrap2 {
-box-shadow:
-0 0 50px rgba(0, 102, 255, 0.7),  /* Основное свечение */
-0 0 50px rgba(0, 80, 255, 0.4);   /* Дополнительное размытие */
-width: 150px;  /* Диаметр круга */
-height: 150px; /* = width для идеального круга */
-border-radius: 50%; /* Делаем круг */
-background: transparent; /* Прозрачный фон */
-position: relative; /* Для позиционирования */
-}
-.photo3 img {
-width: 150px !important; /* Жестко фиксируем ширину */
-top: -15%;
-height: auto; /* Пропорции сохраняются */
-max-width: none !important; /* Отключаем адаптивность */
-}
-#dvd {
-position: absolute;
-width: 120px;
-height: 60px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: Arial, sans-serif;
-font-weight: bold;
-}
-@keyframes shake {
-0%, 100% { transform: translateX(0); }
-10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-20%, 40%, 60%, 80% { transform: translateX(10px); }
-}
-@keyframes intense-shake {
-0%, 100% { transform: translate(0, 0) rotate(0deg); }
-10% { transform: translate(-12px, 12px) rotate(-16deg); }
-20% { transform: translate(15px, 15px) rotate(14deg); }
-30% { transform: translate(-13px, 12px) rotate(-16deg); }
-40% { transform: translate(16px, -14px) rotate(16deg); }
-50% { transform: translate(-13px, 14px) rotate(-14deg); }
-60% { transform: translate(16px, -13px) rotate(45deg); }
-70% { transform: translate(-15px, 17px) rotate(-55deg); }
-80% { transform: translate(18px, -15px) rotate(-19deg); }
-90% { transform: translate(-17px, 18px) rotate(15deg); }
-}    
-#myAudio {
-position: fixed !important; /* Фиксированное положение */
-top: 90%;    /* Отступ снизу */
-left: 42.3%;     /* Отступ справа */
-width: 300px;
-}
-.text-center1 {
-position: fixed; /* Фиксируем позицию */
-top: +93%;
-left: 64.6%;
-transform: translate(-50%, -50%); /* Центрирование */
-color: hwb(114 3% 4%);
-outline: black;
-}
-.glow {
-position: absolute;
-width: 300px;
-height: 300px;
-border-radius: 50%;
-filter: blur(50px);
-opacity: 0;
-animation: pulse 1s infinite; /* 126 BPM */
-}
-#glow-tl {
-top: -150px;
-left: -150px;
-background: radial-gradient(circle, rgba(255,0,100,0.8), transparent 90%);
-}
-@keyframes pulse {
-0%, 100% { opacity: 5; transform: scale(0.8); }
-50% { opacity: 0.3; transform: scale(1); }
-}
-#glow-tr2 {
-top: -150px;
-right: -150px;
-background: radial-gradient(circle, rgba(217, 0, 255, 0.7), transparent 60%);
-}
-.top-pulse {
-position: fixed; /* Изменил на fixed для надежности */
-top: 0;
-left: 0;
-width: 100%;
-height: 50px; /* Увеличил высоту */
-background: linear-gradient(to bottom, 
-rgba(255, 0, 100, 0.9), /* Яркий розовый */
-rgba(255, 0, 100, 0) 90%);
-filter: blur(60px);
-opacity: 0.8;
-animation: top-pulse 0.476s infinite; /* 126 BPM */
-z-index: 9998; /* Высокий индекс */
-pointer-events: none; /* Чтобы не перекрывал клики */
-}
-@keyframes pulse {
-0%, 100% { opacity: 0.5; transform: scale(0.8); }
-50% { opacity: 0.3; transform: scale(1); }
-}
-@keyframes top-pulse {
-0%, 100% { 
-opacity: 0.6; /* Увеличил видимость */
-transform: scaleY(0.9) translateY(-20px); 
-}
-50% { 
-opacity: 0.9; /* Максимальная видимость */
-transform: scaleY(1.3) translateY(0); /* Усилил амплитуду */
-}
-}
-.centercow {
-position: fixed; /* Фиксируем позицию */
-top: +99%;
-left: 1%;
-transform: translate(-50%, -50%); /* Центрирование */
-}
-.photocow img {
-width: 500px !important; /* Жестко фиксируем ширину */
-top: -10%;
-height: auto; /* Пропорции сохраняются */
-max-width: none !important; /* Отключаем адаптивность */
-animation: cow-pulse 1s infinite;
-}
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-body {
-font-family: Arial, sans-serif;
-font-size: 16px;
-line-height: 1.5;
-width: 100%;
-overflow-x: hidden;
-}
-/* Пример адаптивного контейнера */
-.container {
-width: 100%;
-max-width: 1200px;
-padding: 0 15px;
-margin: 0 auto;
-}
-/* Медиа-запросы для разных экранов */
-@media (max-width: 768px) {
-body {
-font-size: 14px;
-}
-/* Дополнительные мобильные стили */
-}
-@media (max-width: 480px) {
-body {
-font-size: 13px;
-}
-}
-* { box-sizing: border-box; }
-img { max-width: 100%; height: auto; }
-@media (max-width: 480px) {
-} 
-@media (max-width: 768px) {
-.module-border-wrap {
-padding: 0.5px;
-border-radius: 15px;
-}
-.photo img {
-width: 100% !important;
-}
-}
-@keyframes cow-pulse {
-0%, 100% { opacity: 1; transform: scale(0.9); }
-37% { opacity: 1; transform: scale(1.4);  }
+.SecondOne h1 {
+padding-bottom: 10px;
 }
