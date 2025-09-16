@@ -217,6 +217,7 @@ function animate(timestamp) {
 
 init();
 let num = 42
+const error = document.getElementById("Error")
 const resultElement = document.getElementById("result")
 const input1 = document.getElementById("input1")
 const input2 = document.getElementById("input2")
@@ -252,6 +253,12 @@ function printResult(result) {
 function computeNumbersWithActions (inp1, inp2, actionSymbol) {
     const num1 = Number(inp1.value)
     const num2 = Number(inp2.value)
+	if (actionSymbol == "/" && num1 === 0 && num2 === 0) {
+		return "Тебе должно быть стыдно за свои действия";}
+	if (actionSymbol == "*" && num != 0 && num2 === 0)
+		return "нолик)";
+	if (actionSymbol == "/" && num1 != 0 && num2 === 0)
+		return "БЕСКОНЕЧНО ВЕЧНОЕ ВЕЛИЧЕСТВЕННОЕ И ПОСТОЯННОЕ";
     if (actionSymbol == "+") {
         return num1 + num2
     } else if (actionSymbol == "-") {
@@ -261,9 +268,9 @@ function computeNumbersWithActions (inp1, inp2, actionSymbol) {
     } else if (actionSymbol == "/") {
         return num1 / num2
     }
-}
-
+	}
 submitBtn.onclick = function () {
     const result = computeNumbersWithActions (input1, input2, action)
     printResult(result)
 }
+
