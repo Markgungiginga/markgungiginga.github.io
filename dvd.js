@@ -36,6 +36,8 @@ function updatePosition() {
 	requestAnimationFrame(updatePosition);
 }
 
+AUTOPLAY()
+
 function changeColor() {
 	hue = (hue + 30) % 360;
 	dvd.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
@@ -50,6 +52,9 @@ window.addEventListener('resize', () => {
 
 // Запуск анимации
 updatePosition();
+
+const audio = document.getElementById("myAudio");
+	audio.volume = 0.3
 
 function AUTOPLAY() {
 	const audio = document.getElementById("myAudio");
@@ -253,13 +258,7 @@ function printResult(result) {
 function computeNumbersWithActions (inp1, inp2, actionSymbol) {
     const num1 = Number(inp1.value)
     const num2 = Number(inp2.value)
-	if (actionSymbol == "/" && num1 === 0 && num2 === 0) {
-		return "Тебе должно быть стыдно за свои действия";}
-	if (actionSymbol == "*" && num != 0 && num2 === 0)
-		return "нолик)";
-	if (actionSymbol == "/" && num1 != 0 && num2 === 0)
-		return "БЕСКОНЕЧНО ВЕЧНОЕ ВЕЛИЧЕСТВЕННОЕ И ПОСТОЯННОЕ";
-    if (actionSymbol == "+") {
+    if (actionSymbol == "+") { 
         return num1 + num2
     } else if (actionSymbol == "-") {
         return num1 - num2
@@ -269,8 +268,40 @@ function computeNumbersWithActions (inp1, inp2, actionSymbol) {
         return num1 / num2
     }
 	}
+function GIGABRAINFUCK(result){
+	switch (result.toString()) {
+		case ("Infinity"):
+		return "БЕСКОНЕЧНО ВЕЧНОЕ ПРЕКРАСНО ПОСТОЯННОЕ";
+		case ("0"):
+		return "Нолик почини меня"
+		case ("NaN"):
+		return "Тебе должно быть стыдно за свои действия"
+		default: return result
+	}
+}
 submitBtn.onclick = function () {
-    const result = computeNumbersWithActions (input1, input2, action)
+    let result = computeNumbersWithActions (input1, input2, action)
+	result = GIGABRAINFUCK(result)
     printResult(result)
 }
+function launchAirplane() {
+    const video = document.getElementById('airplaneVideo');
+    
 
+    video.classList.remove('airplane-crashing');
+    void video.offsetWidth; 
+    
+
+    video.classList.add('airplane-crashing');
+    
+
+    video.currentTime = 0;
+    video.play().catch(e => {
+    });
+    
+
+    setTimeout(() => {
+        video.classList.remove('airplane-crashing');
+        video.pause();
+    }, 2500);
+}
