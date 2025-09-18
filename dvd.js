@@ -296,3 +296,7 @@ function launchAirplane() {
 	new Audio('audio/Jet crash on green screen [WxF-lwPkpvc] (audio-extractor.net).mp3').play();
 	// пиздец
 }
+document.onclick = function() {
+	document.getElementById("myAudio").play();
+	document.onclick = null
+}
