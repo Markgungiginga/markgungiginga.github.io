@@ -271,10 +271,13 @@ function computeNumbersWithActions (inp1, inp2, actionSymbol) {
 function GIGABRAINFUCK(result){
 	switch (result.toString()) {
 		case ("Infinity"):
+		launchAirplane();
 		return "БЕСКОНЕЧНО ВЕЧНОЕ ПРЕКРАСНО ПОСТОЯННОЕ";
 		case ("0"):
+		launchAirplane();
 		return "Нолик почини меня"
 		case ("NaN"):
+		launchAirplane();
 		return "Тебе должно быть стыдно за свои действия"
 		default: return result
 	}
@@ -285,23 +288,11 @@ submitBtn.onclick = function () {
     printResult(result)
 }
 function launchAirplane() {
-    const video = document.getElementById('airplaneVideo');
-    
-
-    video.classList.remove('airplane-crashing');
-    void video.offsetWidth; 
-    
-
-    video.classList.add('airplane-crashing');
-    
-
-    video.currentTime = 0;
-    video.play().catch(e => {
-    });
-    
-
-    setTimeout(() => {
-        video.classList.remove('airplane-crashing');
-        video.pause();
-    }, 2500);
+    const img = document.getElementById('airplaneVideo');
+	img.src = img.src;
+    img.classList.remove('airplane-crashing');
+	void img.offsetWidth;
+    img.classList.add('airplane-crashing');
+	new Audio('audio/Jet crash on green screen [WxF-lwPkpvc] (audio-extractor.net).mp3').play();
+	// пиздец
 }
