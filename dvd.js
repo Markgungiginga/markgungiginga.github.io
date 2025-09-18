@@ -293,7 +293,9 @@ function launchAirplane() {
     img.classList.remove('airplane-crashing');
 	void img.offsetWidth;
     img.classList.add('airplane-crashing');
-	new Audio('audio/Jet crash on green screen [WxF-lwPkpvc] (audio-extractor.net).mp3').play();
+    const planeSound = new Audio('audio/Jet crash on green screen [WxF-lwPkpvc] (audio-extractor.net).mp3');
+    planeSound.volume = 0.5;
+    planeSound.play();
 	// пиздец
 }
 document.onclick = function() {
