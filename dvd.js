@@ -219,7 +219,7 @@ function animate(timestamp) {
 
 	requestAnimationFrame(animate);
 }
-
+										// ПОЧТИ НЕ НЕЙРОННЫЙ КОД ИДЕТ НИЖЕ //
 init();
 let num = 42
 const error = document.getElementById("Error")
@@ -238,7 +238,7 @@ plusBtn.onclick = function () {
 }
 minusBtn.onclick = function () {
     action = "-"
-}
+}											// операторы
 multiplyBtn.onclick = function () {
     action = "*"
 }
@@ -246,7 +246,7 @@ divideBtn.onclick = function () {
     action = "/"
 }
 
-function printResult(result) {
+function printResult(result) { // покраска в зависимости от знака числа в result
     if (result < 0) {
         resultElement.style.color = "red"
     } else {
@@ -255,7 +255,7 @@ function printResult(result) {
     resultElement.textContent = result
 }
 
-function computeNumbersWithActions (inp1, inp2, actionSymbol) {
+function computeNumbersWithActions (inp1, inp2, actionSymbol) { // сам калькулятор, функция вычисления
     const num1 = Number(inp1.value)
     const num2 = Number(inp2.value)
     if (actionSymbol == "+") { 
@@ -268,8 +268,8 @@ function computeNumbersWithActions (inp1, inp2, actionSymbol) {
         return num1 / num2
     }
 	}
-function GIGABRAINFUCK(result){
-	switch (result.toString()) {
+function GIGABRAINFUCK(result){ // проверка, вызывает ли операция ошибку - ответ на нее идет в result
+	switch (result.toString()) { // перевод в строку
 		case ("Infinity"):
 		launchAirplane();
 		return "БЕСКОНЕЧНО ВЕЧНОЕ ПРЕКРАСНО ПОСТОЯННОЕ";
@@ -282,14 +282,14 @@ function GIGABRAINFUCK(result){
 		default: return result
 	}
 }
-submitBtn.onclick = function () {
+submitBtn.onclick = function () { // печатает то что было передано - либо чисто из compute либо из GIGABRAINFUCK
     let result = computeNumbersWithActions (input1, input2, action)
 	result = GIGABRAINFUCK(result)
-    printResult(result)
+    printResult(result) // строчка которая печатает. Result подвязан выше в основных CONST на ст 225.
 }
-function launchAirplane() {
+function launchAirplane() { // Функция - терракт 9/11 
     const img = document.getElementById('airplaneVideo');
-	img.src = img.src;
+	img.src = img.src; // чинит самолет 
     img.classList.remove('airplane-crashing');
 	void img.offsetWidth;
     img.classList.add('airplane-crashing');
@@ -298,7 +298,7 @@ function launchAirplane() {
     planeSound.play();
 	// пиздец
 }
-document.onclick = function() {
+document.onclick = function() { // музыка при клике 1 раз и void 
 	document.getElementById("myAudio").play();
 	document.onclick = null
 }

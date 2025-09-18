@@ -267,8 +267,8 @@ outline: black;
 .airplane-crashing {
     display: block !important;
     animation: airplaneCrash 3s ease-in forwards;
-    animation-delay: 0.3s; /* ← ЗАДЕРЖКА 1.5 СЕКУНДЫ */
-    opacity: 1; /* Сначала невидим */
+    animation-delay: 0.3s;
+    opacity: 1; 
 }
 
 @keyframes airplaneCrash {
@@ -279,11 +279,11 @@ outline: black;
         opacity: 1;
     }
     10% {
-        opacity: 1; /* Появляемся после задержки */
+        opacity: 1;
     }
     100% {
-        top: 110vh;
-        left: 110vw;
+        top: 120vh;
+        left: 120vw;
         transform: scale(1.7);
         opacity: 1;
     }
